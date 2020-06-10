@@ -1,39 +1,26 @@
-import React, { Component } from 'react'
-import Column from './components/Column'
-import ColumnRow from './components/ColumnRow'
-import Upload from './components/Upload'
-import { Button } from '@material-ui/core'
+import React, { useState, useEffect } from 'react';
+import { fetchData, addFile } from './services/services';
+import { FileList } from './components/FileList';
+import { Form } from './components/Form';
+import { Header } from 'components/Header';
 
-const url = 'http://localhost:8080/files'
+export const App = () => {
+  const [files, setFiles] = useState([]);
+  const [error, setError] = useState(false);
 
-class App extends Component {
-  constructor(props) {
-    super(props)
+  useEffect(() => {
+    fetchData(setError, setFiles);
+  }, []);
 
-    this.state = {
-      files: null
-    }
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
-  fetchData() {
-    fetch(url)
-      .then((response) => response.json())
-      .then((files) => this.setState({ files }))
-  }
-
-  componentDidMount() {
-    this.fetchData()
-  }
-
-  render() {
-    return (
-      <>
-        <Column files={this.state.files} />
-        <Upload />
-      </>
-    )
-  }
-
-}
-
-export default App 
+  return (
+    <>
+      <Header />
+      <Form />
+      <FileList files={files} />
+    </>
+  );
+};

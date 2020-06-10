@@ -1,9 +1,10 @@
 import mongoose from 'mongoose'
 
-export const File = mongoose.model("File", {
+export const File = mongoose.model('File', {
     filename: String,
     description: String,
     uploader: String,
     date: Date,
-    type: String
+    type: String,
+    size: String,
 })

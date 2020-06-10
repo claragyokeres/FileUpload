@@ -1,13 +1,20 @@
-# Project Auth
 
-Replace this readme with your own information about your project.
+# File Upload Website
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a website for uploading your files. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Using React Starter and express-fileupload + node for backend. 
+The project was made into components with the original base of a frontend and backend part. 
 
-## View it live
+## Installation
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+npm install
+Frontend: npm start
+Backend: npm run dev 
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
